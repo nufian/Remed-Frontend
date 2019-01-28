@@ -115,7 +115,7 @@ class Managemovies extends Component {
                 <div className="container">
 
                     <div className="title-bg">
-                        <div className="title"><center><h1>Movies list</h1></center></div>
+                        <div className="title"><center><h1>Movie list</h1></center></div>
                     </div>
 
                     <div className="table-responsive">

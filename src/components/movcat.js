@@ -87,7 +87,7 @@ class ManageConnect extends Component {
                 <div className="container">
 
                     <div className="title-bg">
-                        <div className="title"><center><h1>Categories list</h1></center></div>
+                        <div className="title"><center><h1>Connection list</h1></center></div>
                     </div>
 
                     <div className="table-responsive">
