@@ -38,7 +38,7 @@ class ManageConnect extends Component {
 
     onBtnDeleteClick = (id_film) => {
         if(window.confirm('Yakin nih bro?')){
-            axios.post('http://localhost:1990/deletemovcat/' + id_film)
+            axios.delete('http://localhost:1990/deletemovcat/' + id_film)
                 .then((res) => {
                     this.getConnList();
                 }).catch((err) => {

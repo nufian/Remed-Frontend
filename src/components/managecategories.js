@@ -37,7 +37,7 @@ class ManageCategories extends Component {
 
     onBtnDeleteClick = (id) => {
         if(window.confirm('Yakin nih bro?')){
-            axios.post('http://localhost:1990/deletecategory/' + id)
+            axios.delete('http://localhost:1990/deletecategory/' + id)
                 .then((res) => {
                     this.getCategoryList();
                 }).catch((err) => {
@@ -57,7 +57,7 @@ class ManageCategories extends Component {
         var nama = this.refs.namaSAVE.value;
         
         console.log(nama)
-        axios.post('http://localhost:1990/editcategory/' + id, {
+        axios.put('http://localhost:1990/editcategory/' + id, {
             nama
         }).then((res) => {
             console.log(res.data)

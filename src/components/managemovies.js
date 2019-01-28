@@ -39,7 +39,7 @@ class Managemovies extends Component {
 
     onBtnDeleteClick = (id) => {
         if(window.confirm('Yakin nih bro?')){
-            axios.post('http://localhost:1990/deletemovie/' + id)
+            axios.delete('http://localhost:1990/deletemovie/' + id)
                 .then((res) => {
                     this.getMovieList();
                 }).catch((err) => {
@@ -60,7 +60,7 @@ class Managemovies extends Component {
         var tahun = this.refs.tahunSAVE.value;
         var description = this.refs.descSAVE.value;
         console.log(description)
-        axios.post('http://localhost:1990/editmovie/' + id, {
+        axios.put('http://localhost:1990/editmovie/' + id, {
             nama,tahun, description
         }).then((res) => {
             console.log(res.data)
