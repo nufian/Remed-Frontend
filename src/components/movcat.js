@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class ManageCategories extends Component {
+class ManageConnect extends Component {
 
     state = { listConn: [] }
 
@@ -20,14 +20,14 @@ class ManageCategories extends Component {
     }
 
     onBtnAddClick = () => {
-        var nama_film = this.refs.namafilmAdd.value;
-        var nama_category = this.refs.namacategoryAdd.value;
+        var NamaMovies = this.refs.namafilmAdd.value;
+        var NamaCategories = this.refs.namacategoryAdd.value;
 
-        if(nama_film === '' || nama_category ===''){
+        if(NamaMovies === '' || NamaCategories ===''){
             window.alert('Ada kolom yang belum di isi !!!')
         }else{
             axios.post('http://localhost:1990/addmovcat', {
-                nama_film,nama_category
+                NamaMovies,NamaCategories
             }).then((res) => {
                 this.getConnList();
             }).catch((err) => {
@@ -51,11 +51,11 @@ class ManageCategories extends Component {
 
 
     renderBodyConn = () => {
-        var listJSXConn = this.state.listConn.map(({ id_film, nama_film, nama_category}) => {
+        var listJSXConn = this.state.listConn.map(({ id_film, NamaMovies, NamaCategories}) => {
                 return (
                     <tr>
-                        <td>{nama_film}</td>
-                        <td>{nama_category}</td>
+                        <td>{NamaMovies}</td>
+                        <td>{NamaCategories}</td>
                         <td><input className="btn btn-danger" type="button" value="Delete" onClick={() => this.onBtnDeleteClick(id_film)} /></td>
                     </tr>
                 )
@@ -64,17 +64,17 @@ class ManageCategories extends Component {
         return listJSXConn;
     }
     getNamafilm =()=>{
-        var namafilm = this.state.listConn.map(({nama_film})=>{
+        var namafilm = this.state.listConn.map(({NamaMovies})=>{
             return(
-                <option>{nama_film}</option>
+                <option>{NamaMovies}</option>
             )
         })
         return namafilm
     }
     getNamakategori =()=>{
-        var namakategori = this.state.listConn.map(({nama_category})=>{
+        var namakategori = this.state.listConn.map(({NamaCategories})=>{
             return(
-                <option>{nama_category}</option>
+                <option>{NamaCategories}</option>
             )
         })
         return namakategori
@@ -128,4 +128,4 @@ class ManageCategories extends Component {
     }
 }
 
-export default ManageCategories;
+export default ManageConnect;

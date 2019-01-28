@@ -77,7 +77,7 @@ class ManageCategories extends Component {
 
     renderBodyMovies = () => {
         var listJSXCategories = this.state.listCategory.map(({ id, nama}) => {
-            // console.log(`${this.state.idTabel} --- ${id}`)
+             console.log(`${this.state.idTabel} --- ${id}`)
             if(this.state.idTabel === id){
                 return (
                     <tr>
@@ -127,7 +127,7 @@ class ManageCategories extends Component {
                             <tfoot>
                                 <tr>
                                 <td></td>
-                                    <td><input ref="namaAdd" type="text" placeholder="Nama film" className="form-control" style={{width: "120px"}} /></td>
+                                    <td><input ref="namaAdd" type="text" placeholder="Category" className="form-control" style={{width: "120px"}} /></td>
                                     <td><input type="button" className="btn btn-success" value="Add" onClick={this.onBtnAddClick}/></td>
                               
                                 </tr>
